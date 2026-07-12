@@ -6,6 +6,16 @@ body {
     font-family: sans-serif;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: rgb(92, 143, 255) solid 2px;
+}
+
+.navbar h1 {
+    font-family: "Righteous", sans-serif ;
+}
 
 .input-container {
     justify-content: center;
@@ -29,7 +39,8 @@ body {
 }
 
 .chatbox {
-    width: 50%;
+    width: fit-content;
+    max-width: 30%;
     background-color: rgba(241, 241, 241,);
     padding: 10px;
     margin: 20px;
