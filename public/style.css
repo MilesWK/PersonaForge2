@@ -6,12 +6,21 @@ body {
     font-family: sans-serif;
 }
 
-/* That input at the bottom of the screen */
-#chat {
+
+.input-container {
+    justify-content: center;
+    display: flex;
+    align-items: center;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+}
+/* That input at the bottom of the screen */
+#chat {
+    background: none;
+    backdrop-filter: blur(4px);
+    width: 70%;
     z-index: 1000;
     padding: 10px;
     margin: 20px;
@@ -20,8 +29,8 @@ body {
 }
 
 .chatbox {
-    width: 50vh;
-    background-color: rgb(241, 241, 241);
+    width: 50%;
+    background-color: rgba(241, 241, 241,);
     padding: 10px;
     margin: 20px;
 }
@@ -36,4 +45,9 @@ body {
     text-align: right;
     border-radius: 20px;
     border-bottom-right-radius: 0%;
+}
+
+.chatbox-container {
+    justify-content: right;
+    display: flex;
 }
