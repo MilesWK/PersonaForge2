@@ -38,6 +38,7 @@ body {
 .ai {
     border-radius: 20px;
     border-bottom-left-radius: 0%;
+    background-color: lightgray;
 }
 
 .user {
