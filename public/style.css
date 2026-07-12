@@ -1,17 +1,39 @@
-html, 
+/* I always do this for my projects. */
+html,
 body {
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
 
-.container {
-    height: 100vh;
-    position: relative;
-}
-
+/* That input at the bottom of the screen */
 #chat {
-    position: absolute; 
-    bottom: 0;        
-    left: 0;          
-    width: 100%;  
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 2px rgb(92, 143, 255) solid;
+}
+
+.chatbox {
+    width: 50vh;
+    background-color: rgb(241, 241, 241);
+    padding: 10px;
+    margin: 20px;
+}
+
+.ai {
+    border-radius: 20px;
+    border-bottom-left-radius: 0%;
+}
+
+.user {
+    background-color: rgb(156, 156, 255);
+    text-align: right;
+    border-radius: 20px;
+    border-bottom-right-radius: 0%;
 }
