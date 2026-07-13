@@ -69,7 +69,8 @@ body {
     left: 0;
     width: 100%;
 }
-/* That input at the bottom of the screen */
+
+/* That input at the bottom of the screen (not to be confused with chatbox, which is the box that shows the message.) */
 #chat {
     background: none;
     backdrop-filter: blur(4px);
@@ -87,6 +88,8 @@ body {
     background-color: rgba(241, 241, 241,);
     padding: 10px;
     margin: 20px;
+    margin-top: 10px;
+    overflow-wrap: break-word
 }
 
 .ai {
