@@ -6,15 +6,58 @@ body {
     font-family: sans-serif;
 }
 
+@font-face {
+    font-family: "Pally";
+    src: url("fonts/Pally-Variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    align-items: center;
+    padding: 0 30px;
     border-bottom: rgb(92, 143, 255) solid 2px;
 }
 
+#login-btn {
+    padding: 0;
+    height: 35px;
+    width: 35px;
+    background: none;
+    cursor: pointer;
+    border-radius: 40px;
+    border: 2px dashed rgb(156, 156, 156);
+    font-size: 14px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+#login-btn:hover {
+    background-color: rgb(233, 233, 233);
+    transform: rotate(30deg);
+    cursor: pointer;
+}
+
+#send-btn {
+    background-color: rgb(92, 143, 255);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
 .navbar h1 {
-    font-family: "Righteous", sans-serif ;
+    font-family: "Pally", sans-serif;
+    font-weight: 100;
 }
 
 .input-container {
