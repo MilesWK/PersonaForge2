@@ -98,6 +98,10 @@ body {
     overflow-wrap: break-word
 }
 
+#messages, #loader-container {
+    margin-bottom: 70px;
+}
+
 .ai {
     border-radius: 20px;
     max-width: 50%;
