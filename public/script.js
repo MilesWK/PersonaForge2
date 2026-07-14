@@ -1,5 +1,6 @@
 const message_container = document.getElementById("messages")
 const prompt_input = document.getElementById("chat")
+const loader = document.getElementById("loader-container")
 // These two functions add messages to the HTML DOM
 function addResponseMessage(msg) {
     const message = document.createElement("div")
@@ -26,12 +27,14 @@ function addUserMessage(msg) {
 
 
 async function makeRequest(msg) {
+    loader.classList.remove("hidden")
     addUserMessage(msg)
     prompt_input.value = ""
 
     const response = await fetch(`http://localhost:3000/aicall?prompt=${msg}`)
     const result = await response.json()
     console.log(result.result)
+    loader.classList.add("hidden")
     addResponseMessage(result.result)
 }
 

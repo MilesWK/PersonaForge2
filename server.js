@@ -24,7 +24,7 @@ const client = new OpenRouter({
 async function callai(pi) {
     const response = await client.chat.send({
     chatRequest: {
-            model: "openrouter/free",
+            model: "~openai/gpt-mini-latest",
             messages: [
                 { role: "user", content: `${pi}` },
             ],
