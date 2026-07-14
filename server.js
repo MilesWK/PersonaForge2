@@ -1,16 +1,16 @@
 import { OpenRouter } from "@openrouter/sdk";
-// import express from 'express';
+import express from 'express';
 
-// const app = express();
-// const port = 3000;
+const app = express();
+const port = 3000;
 
-// app.get('/', (req, res) => {
-//     res.send('<h1>Backend is up! ✅</h1>');
-// });
+app.get('/', (req, res) => {
+    res.send('<h1>Backend is up! ✅</h1>');
+});
 
-// app.listen(port, () => {
-//     console.log(`Backend opperational. Port: ${port}`);
-// });
+app.listen(port, () => {
+    console.log(`Backend opperational. Port: ${port}`);
+});
 
 
 process.loadEnvFile()
@@ -31,15 +31,17 @@ async function callai(pi) {
             stream: false,
         },
     });
-    const check_response = response.choices[0].message.content;
-    return check_response
+    const result = response.choices[0].message.content;
+    return result
 }
 
-console.log(await callai("Hi!"))
-
-
-// app.get('/aicall', async (req, res) => {
-//     const prompt = req.query.prompt
-//     const is_character = await check_if_character(prompt)
-//     res.status(200).json({result: character_image}); 
-// });
+app.get('/aicall', async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    console.log("ooooh a call!")
+    const prompt = req.query.prompt
+    const response = await callai(prompt)
+    console.log(response)
+    res.status(200).json({result: response}); 
+});

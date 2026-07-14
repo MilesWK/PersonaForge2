@@ -25,6 +25,16 @@ function addUserMessage(msg) {
 }
 
 
+async function makeRequest(msg) {
+    addUserMessage(msg)
+    prompt_input.value = ""
+
+    const response = await fetch(`http://localhost:3000/aicall?prompt=${msg}`)
+    const result = await response.json()
+    console.log(result.result)
+    addResponseMessage(result.result)
+}
+
 // addUserMessage("A message here.")
 //addResponseMessage("The response goes here!")
 // addUserMessage("Are you AI?")
@@ -35,8 +45,7 @@ function addUserMessage(msg) {
 prompt_input.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         if (prompt_input.value) {
-            addUserMessage(prompt_input.value)
-            prompt_input.value = ""
+            makeRequest(prompt_input.value)
         }
     }
 });
