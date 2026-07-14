@@ -4,6 +4,12 @@ body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+
+.hidden {
+    display: none;
 }
 
 @font-face {
@@ -108,4 +114,38 @@ body {
 .chatbox-container {
     justify-content: right;
     display: flex;
+}
+/* These are the loader properties */
+.loader-box {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.loader {
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    opacity: 0.1;
+    animation: loader 1s ease-in-out infinite;
+}
+
+.first {
+    margin-left: 0;
+}
+
+.second {
+    animation-delay: 0.1s;
+}
+
+.third {
+    animation-delay: 0.2s;
+}
+
+@keyframes loader {
+    0% {opacity: 0.1;}
+    50% {opacity: 1;}
+    100% {opacity: 0.1;}
 }
